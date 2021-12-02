@@ -105,10 +105,13 @@ XDP_REDIRECT           0 pkts (         0 pps)           0 Kbytes (     0 Mbits/
 
 
 ### 尝试关掉一些一些参数
+```
 root@ubuntu-hirsute:~/withlin/xdp-tutorial/packet03-redirecting# nsenter --net=/var/run/docker/netns/ff0a5996e2d2  ethtool  -K eth0 tso offroot@ubuntu-hirsute:~/withlin/xdp-tutorial/packet03-redirecting# nsenter --net=/var/run/docker/netns/ff0a5996e2d2  ethtool  -K eth0 lro  offroot@ubuntu-hirsute:~/withlin/xdp-tutorial/packet03-redirecting# nsenter --net=/var/run/docker/netns/1eebaa5a17b4 ethtool -K eth0 tso offroot@ubuntu-hirsute:~/withlin/xdp-tutorial/packet03-redirecting# nsenter --net=/var/run/docker/netns/1eebaa5a17b4 ethtool -K eth0 lro  off
 root@ubuntu-hirsute:~/withlin/xdp-tutorial/packet03-redirecting# nsenter --net=/var/run/docker/netns/1eebaa5a17b4 ethtool -K eth0 gso  off
 root@ubuntu-hirsute:~/withlin/xdp-tutorial/packet03-redirecting# nsenter --net=/var/run/docker/netns/1eebaa5a17b4 ethtool -K eth0 gro  off
 root@ubuntu-hirsute:~/withlin/xdp-tutorial/packet03-redirecting# nsenter --net=/var/run/docker/netns/ff0a5996e2d2  ethtool  -K eth0 gso  offroot@ubuntu-hirsute:~/withlin/xdp-tutorial/packet03-redirecting# nsenter --net=/var/run/docker/netns/ff0a5996e2d2  ethtool  -K eth0 gro  offroot@ubuntu-hirsute:~/withlin/xdp-tutorial/packet03-redirecting# 
+
+```
 
 #### 总结
 
