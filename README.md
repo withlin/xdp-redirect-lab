@@ -115,4 +115,6 @@ root@ubuntu-hirsute:~/withlin/xdp-tutorial/packet03-redirecting# nsenter --net=/
 
 #### 总结
 
-加速 加了个寂寞
+> 加速 加了个寂寞
+
+xdp在 veth pair 上会导致TSO 停止工作，数据包被线性化，导致TCP包在两个 veth之前吞吐量降低。该问题还在内核修复阶段，XDP_REDIRECT 在veth设备之间只会变的更慢。。。
